@@ -19,3 +19,11 @@ absolute path = file path starting with / that specifies a unique location
 relative path = file path starting with . that defines the relation to the current working directory
 .. = used with relative path to denote the parent directory (./..)
 
+## Git Notes
+git add <filename> add a file and its changed to staging
+git commit = create a saved state
+-m (message) = add professional commit message
+git status = display the status of repository to terminal
+git add <filename> = adds a file and its changes to staging
+git init = initialize a new local repository
+git log = display the history of commits to the terminal
