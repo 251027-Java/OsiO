@@ -3,6 +3,7 @@ package org.example;
 import org.example.Repository.H2Repository;
 import org.example.Repository.IRepository;
 import org.example.Repository.JSONRepository;
+import org.example.Repository.MongoRepository;
 import org.example.ExpenseService;
 
 import java.util.ArrayList;
@@ -23,19 +24,18 @@ public class Main {
 //        IRepository repo = new TextRepository();
 //        IRepository repo = new CSVRepository();
 //        IRepository repo = new JSONRepository();
-        IRepository repo = new H2Repository();
+        IRepository repo = new MongoRepository();
 
 
 //        System.out.println("Creating a test expense:");
-        ExpenseService service = new ExpenseService(repo);
+      
 //        service.createNewExpense(3,77.95, "Costco");
 //        service.deleteExpense(3);
 
 //        service.createNewExpense(4,67.67, "at&t");
 //        service.deleteExpense(4);
-
-        //service.createNewExpense(5,67.67, "bucees");
-        service.deleteExpense(7);
+//        service.createNewExpense(5,67.67, "bucees");
+//        service.deleteExpense(7);
 //        expenses.add(new Expense(2, new Date(), 85.75, "Costco"));
 //        expenses.add(new Expense(3, new Date(), 10000, "Private Jet"));
 //        repo.saveExpenses(expenses);
@@ -47,6 +47,9 @@ public class Main {
 //        service.sumExpenses();
 //        service.printExpenses();
 
+        ExpenseService service = new ExpenseService(repo);
+        service.createNewExpense(4,67.67, "at&t");
+        
         System.out.println("Expense Tracker Closing...");
     }
 }
