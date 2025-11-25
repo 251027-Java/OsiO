@@ -1,0 +1,30 @@
+{
+    "expenses":[
+  {
+    "id": "e1",
+    "title": "testing",
+    "amount": 123,
+    "date": "2023, 11, 24"
+  },
+
+  {
+    "id": "e2",
+    "title": "testing2",
+    "amount": 234,
+    "date": "2023, 11, 24"
+  },
+
+  {
+    "id": "e3",
+    "title": "testing3",
+    "amount": 345,
+    "date": "2023, 11, 24"
+  },
+  {
+    "id": "e4",
+    "title": "testing3",
+    "amount": 456,
+    "date": "2023, 11, 24"
+  }
+]
+}
