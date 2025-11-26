@@ -1,5 +1,5 @@
 const ReportSummary = ({ selectedExpenses, closeHandler, onSave }) => {
-    const totalAmount = selectedExpenses.reduce((sum, exp) => sum + exp.amount, 0);
+    const totalAmount = selectedExpenses.reduce((sum, exp) => sum + Number(exp.amount), 0);
     const reportDate = new Date().toLocaleDateString();
 
     const saveHandler = () => {
@@ -26,9 +26,9 @@ const ReportSummary = ({ selectedExpenses, closeHandler, onSave }) => {
                 <table className="w-full text-left">
                     <thead>
                         <tr>
+                            <th className="py-2">Date</th>
                             <th className="py-2">Title</th>
-                            <th className="py-2">Amount</th>
-                            <th className="py-2 text-right">Date</th>
+                            <th className="py-2 text-right">Amount</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,7 +46,7 @@ const ReportSummary = ({ selectedExpenses, closeHandler, onSave }) => {
                         <tr>
                             <td className="py-2">Total</td>
                             <td className="py-2"></td>
-                            <td className="py-2">${totalAmount}</td>
+                            <td className="py-2 text-right font-bold">${totalAmount}</td>
                         </tr>
                     </tfoot>
                 </table>

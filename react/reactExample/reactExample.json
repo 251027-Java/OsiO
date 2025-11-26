@@ -1,30 +1,76 @@
 {
-    "expenses":[
-  {
-    "id": "e1",
-    "title": "testing",
-    "amount": 123,
-    "date": "2023, 11, 24"
-  },
-
-  {
-    "id": "e2",
-    "title": "testing2",
-    "amount": 234,
-    "date": "2023, 11, 24"
-  },
-
-  {
-    "id": "e3",
-    "title": "testing3",
-    "amount": 345,
-    "date": "2023, 11, 24"
-  },
-  {
-    "id": "e4",
-    "title": "testing3",
-    "amount": 456,
-    "date": "2023, 11, 24"
-  }
-]
+  "expenses": [
+    {
+      "id": "e1",
+      "title": "testing",
+      "amount": 123,
+      "date": "2023, 11, 24"
+    },
+    {
+      "id": "e2",
+      "title": "testing2",
+      "amount": 234,
+      "date": "2023, 11, 24"
+    },
+    {
+      "id": "e3",
+      "title": "testing3",
+      "amount": 345,
+      "date": "2023, 11, 24"
+    },
+    {
+      "id": "e4",
+      "title": "testing3",
+      "amount": 456,
+      "date": "2023, 11, 24"
+    },
+    {
+      "id": "8e1a",
+      "title": "cheese",
+      "amount": 21,
+      "date": "2023-05-16T00:00:00.000Z"
+    },
+    {
+      "id": "08be",
+      "title": "meta glasses",
+      "amount": 67,
+      "date": "2023-12-25T00:00:00.000Z"
+    },
+    {
+      "id": "75f4",
+      "title": "meta glasses",
+      "amount": 67,
+      "date": "2026-09-25T00:00:00.000Z"
+    },
+    {
+      "id": "119e",
+      "title": "beats solo",
+      "amount": 102,
+      "date": "2025-08-19T00:00:00.000Z"
+    },
+    {
+      "id": "7231",
+      "title": "butt",
+      "amount": 77,
+      "date": "2023-06-26T00:00:00.000Z"
+    },
+    {
+      "id": "a176",
+      "title": "butt2",
+      "amount": "14",
+      "date": "2023-11-28T06:00:00.000Z"
+    },
+    {
+      "id": "1194",
+      "title": "monkeys",
+      "amount": "88",
+      "date": "2025-11-27T06:00:00.000Z"
+    },
+    {
+      "id": "8b2e",
+      "title": "chickens",
+      "amount": "23",
+      "date": "2023-06-26T05:00:00.000Z"
+    }
+  ]
 }

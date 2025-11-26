@@ -21,10 +21,11 @@ const ExpenseForm = (prop) => {
 
     const submitHandler = (event) => {
         event.preventDefault();
+        //const dateWithTime = enteredDate ? `${enteredDate}T00:00:00` : new Date().toISOString();
         const expenseData = {
             title: enteredTitle,
-            amount: +enteredAmount,
-            date: new Date(enteredDate),
+            amount: enteredAmount,
+            date: new Date(`${enteredDate}T00:00:00`)
         };
         console.log(expenseData);
         prop.onSaveExpenseData(expenseData);

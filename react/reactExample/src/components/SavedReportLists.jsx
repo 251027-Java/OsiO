@@ -2,10 +2,11 @@ const SavedReportLists = ({ reports, onDelete }) => {
     if (reports.length === 0) {
         return null;
     }
+    console.log("reports", reports);
     return (
         <div className='mt-8 bg-white p-6 rounded-2xl shadow-md border border-slate-200'>
             <h3 className='text-slate-500 font-bold border-b pb-2 mb-2 uppercase'>Saved Reports History</h3>
-            <div className='grid gap-3'>{reports.map((report) => (
+            <div className='grid gap-3'>{reports ? reports.map((report) => (
                 <div key={report.id} className='flex justify-between items-center p-4 bg-slate-50 rounded-lg border border-slate-100 hover:border-indigo-200 transition-colors'>
                     <div className='flex flex-col'>
                         <p>Report {report.id.substring(2, 6)} </p>
@@ -22,7 +23,7 @@ const SavedReportLists = ({ reports, onDelete }) => {
                         </div>
                     </div>
                 </div>
-            ))}
+            )) : ""}
             </div>
         </div>
     );
