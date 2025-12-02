@@ -1,30 +1,37 @@
 package com.revature.ExpenseReport.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
-@Entity
+@Entity // telling JPA that this needs to be a table in the database
+@Table(name = "expenses") // naming the table in the database
 public class Expense {
-    //fields
-    @Id
-    @GeneratedValue
-    private String id;
+    // Fields
+    @Id @GeneratedValue private String expenseId;
+    @Column(name = "expenseMerchant") private String expenseMerchant; // manage column information for this variable
+    private LocalDate expenseDate;
+    private BigDecimal expenseValue;
 
-    private String merchant;
-    private Date date;
-    private double value;
+    // Constructor
+    public Expense() {}
 
-
-    //constructor
-    public Expense(){}
-
-    public Expense(Date date, double value, String merchant){
-        this.date = date;
-        this.value = value;
-        this.merchant = merchant;
+    public Expense(LocalDate date, BigDecimal value, String merchant){
+        this.expenseDate = date;
+        this.expenseValue = value;
+        this.expenseMerchant = merchant;
     }
 
-    //methods
+    // Methods
+    public String getId() { return expenseId; }
+    public LocalDate getDate() { return expenseDate; }
+    public BigDecimal getValue() { return expenseValue; }
+    public String getMerchant() { return expenseMerchant; }
+
+    public void setId(String id) { this.expenseId = id; }
+    public void setDate(LocalDate date) { this.expenseDate = date; }
+    public void setValue(BigDecimal value) { this.expenseValue = value; }
+    public void setMerchant(String merchant) { this.expenseMerchant = merchant; }
 }
