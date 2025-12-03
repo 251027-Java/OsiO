@@ -1,7 +1,9 @@
 package com.revature.ExpenseReport;
 
 import com.revature.ExpenseReport.Model.Expense;
+import com.revature.ExpenseReport.Model.Report;
 import com.revature.ExpenseReport.Repository.ExpenseRepo;
+import com.revature.ExpenseReport.Repository.ReportRepo;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -27,6 +29,14 @@ public class ExpenseReportApplication {
             var e3 = new Expense(LocalDate.now().minusDays(2), new BigDecimal(99.88), "Buffalo Wild Wings");
 
             repository.saveAll(List.of(e1, e2, e3));
+        };
+    }
+
+    @Bean // Bean is a single method that is run after the application is started
+    CommandLineRunner seedDataReport (ReportRepo repository) {
+        return args -> {
+            var r1 = new Report("Report1", "Started");
+            repository.save(r1);
         };
     }
 }

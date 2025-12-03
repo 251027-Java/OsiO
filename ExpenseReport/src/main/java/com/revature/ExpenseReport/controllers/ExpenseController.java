@@ -33,8 +33,8 @@ public class ExpenseController {
 
     //create an expense
     @PostMapping
-    public ExpenseDTO create(@RequestBody ExpenseWOIDDTO expensedto){
-        return service.create(expensedto);
+    public ExpenseDTO create(@RequestBody ExpenseWOIDDTO dto){
+        return service.create(dto);
     }
 
 
@@ -48,7 +48,16 @@ public class ExpenseController {
 
 
     //update/modify expense
+    @PutMapping("/{id}")
+    public ExpenseDTO update(@PathVariable String id, @RequestBody ExpenseDTO dto){
+        return service.update(id, dto);
+    }
+
 
     //delete expense
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable String id){
+        service.delete(id);
+    }
 
 }
