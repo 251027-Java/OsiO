@@ -3,6 +3,7 @@ package com.revature.ExpenseReport.Model;
 import com.revature.ExpenseReport.Repository.AppUserRepo;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -14,10 +15,12 @@ import java.util.Optional;
 public class BasicAuthInterceptor implements HandlerInterceptor {
     //fields
     private final AppUserRepo repo;
+    private final PasswordEncoder passwordEncoder;
 
 
     //constructors
-    public BasicAuthInterceptor(AppUserRepo repo){
+    public BasicAuthInterceptor(AppUserRepo repo, PasswordEncoder passwordEncoder){
+        this.passwordEncoder = passwordEncoder;
         this.repo = repo;
     }
 
@@ -40,13 +43,17 @@ public class BasicAuthInterceptor implements HandlerInterceptor {
 
                 //check if user is in the database
                 Optional<AppUser> user = repo.findByUsername(username);
-                if (user.isPresent() && user.get().getPassword().equals(password)){
+
+                /*if (user.isPresent() && user.get().getPassword().equals(password)){
+                    return true;
+                }*/
+
+                if (user.isPresent() && passwordEncoder.matches(password, user.get().getPassword())){
                     return true;
                 }
-                //check if user is correct
-
             }
         }
+
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         response.getWriter().write("Unauthorized: invalid credentials");
         return false;

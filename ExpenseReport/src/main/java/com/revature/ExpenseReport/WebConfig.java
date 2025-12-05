@@ -1,10 +1,12 @@
 package com.revature.ExpenseReport;
 
 import com.revature.ExpenseReport.Model.BasicAuthInterceptor;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+@Configuration
 public class WebConfig implements WebMvcConfigurer {
     //fields
     private final BasicAuthInterceptor basicAuthInterceptor;
