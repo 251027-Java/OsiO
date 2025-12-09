@@ -1,5 +1,6 @@
-package com.revature.ExpenseReport.Model;
+package com.revature.ExpenseReport;
 
+import com.revature.ExpenseReport.Model.AppUser;
 import com.revature.ExpenseReport.Repository.AppUserRepo;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
